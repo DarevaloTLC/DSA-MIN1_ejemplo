@@ -76,11 +76,11 @@ public class ProductsService {
         return Response.status(201).entity(order).build();
     }
 
-    @DELETE
+    @PUT
     @ApiOperation(value = "process an Order", notes = "asdasd")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successfull"),
-            @ApiResponse(code = 500, message = "Empty List")
+            @ApiResponse(code = 404, message = "Empty List")
     })
     @Path("/")
     public Response proccessOrder(){

@@ -28,7 +28,7 @@ public class Main {
         BeanConfig beanConfig = new BeanConfig();
 
         beanConfig.setHost("localhost:8080");
-        beanConfig.setBasePath("/dsaApp");
+        beanConfig.setBasePath("/DidacApp");
         beanConfig.setContact("support@example.com");
         beanConfig.setDescription("REST API for Products Manager");
         beanConfig.setLicenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html");
@@ -42,11 +42,7 @@ public class Main {
         // exposing the Jersey application at BASE_URI
         return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
     }
-    /**
-     * Main method.
-     * @param args
-     * @throws IOException
-     */
+
     public static void main(String[] args) throws IOException {
         final HttpServer server = startServer();
 
