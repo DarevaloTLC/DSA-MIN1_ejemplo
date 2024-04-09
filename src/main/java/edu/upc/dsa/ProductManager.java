@@ -14,4 +14,5 @@ public interface ProductManager {
 
     public void addUser(String s, String name, String surname);
     public void addProduct(String productId, String name, double price);
+    public int getProductsSize();
 }

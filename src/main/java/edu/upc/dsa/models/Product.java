@@ -17,6 +17,19 @@ public class Product {
     public Integer getSales(){
         return this.sales;
     }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     public void setSales(Integer i){
         this.sales = i;
     }

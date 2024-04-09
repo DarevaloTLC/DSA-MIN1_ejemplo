@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class Order {
     private String UserID;
-    private HashMap<String, Integer> pedido;
+    private HashMap<String, Integer> pedido; //CONVERTIR HASHMAP A UN VECTOR UTILIZANDO UNA CLASE LINEA DE PRODUCTOS
     public Order(String id){
         this.UserID=id;
         pedido = new HashMap<>();
@@ -33,5 +33,11 @@ public class Order {
     }
 
 
+    public String getUserID() {
+        return UserID;
+    }
 
+    public void setUserID(String userID) {
+        UserID = userID;
+    }
 }

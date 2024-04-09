@@ -25,8 +25,8 @@ public class ProductsService {
     private ProductManager pm;
 
     public ProductsService() {
-        this.pm =ProductManagerImpl.getInstance();
-        if(pm==null){
+        this.pm =ProductManagerImpl.getInstance(); //CUANDO USAMOS SINGLETONE NUNCAA!!!! PUEDE SER NULL POR DEFINICION
+        if(pm.getProductsSize() == 0){
             pm.addProduct("01", "Apple", 1.00);
             pm.addProduct("02", "Banana", 2.00);
             pm.addProduct("03", "Orange", 3.00);
@@ -39,7 +39,7 @@ public class ProductsService {
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successfull", response = Product.class, responseContainer = "List"),
     })
-    @Path("/")
+    @Path("/ByPrice")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getProductsByPrice() {
         List<Product> productsList = this.pm.productsByPrice();
@@ -53,7 +53,7 @@ public class ProductsService {
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successfull", response = Product.class),
     })
-    @Path("/")
+    @Path("/BySales")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getProductsBySales() {
         List<Product> productsList = this.pm.productsBySales();
@@ -68,7 +68,7 @@ public class ProductsService {
             @ApiResponse(code = 201, message = "Successfull", response = Order.class),
             @ApiResponse(code = 500, message = "Validation Error")
     })
-    @Path("/")
+    @Path("/NewOrder")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addOrder(Order order){
         if(order==null) return Response.status(500).entity(order).build();
@@ -82,7 +82,7 @@ public class ProductsService {
             @ApiResponse(code = 201, message = "Successfull"),
             @ApiResponse(code = 404, message = "Empty List")
     })
-    @Path("/")
+    @Path("/ProcessOrder")
     public Response proccessOrder(){
         Order o = pm.processOrder();
         if(o==null) return Response.status(500).entity(o).build();
