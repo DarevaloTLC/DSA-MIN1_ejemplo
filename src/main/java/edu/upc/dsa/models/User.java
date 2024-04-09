@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    private String ID;
+    private String id;
     private String name;
     private String lastname;
     private List<Order> orderList;
     public User(String i, String n, String ln){
-        this.ID = i;
+        this.id = i;
         this.name = n;
         this.lastname = ln;
         this.orderList = new ArrayList<>();
@@ -17,8 +17,8 @@ public class User {
     public User()
     {
     }
-    public String getID(){
-        return this.ID;
+    public String getId(){
+        return this.id;
     }
     public String getName(){
         return this.name;
@@ -26,8 +26,8 @@ public class User {
     public String getLastName(){
         return this.lastname;
     }
-    public void setID(String id){
-        this.ID=id;
+    public void setId(String id){
+        this.id =id;
     }
     public List<Order> getOrderList(){
         return orderList;
